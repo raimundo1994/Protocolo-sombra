@@ -366,7 +366,7 @@ protocolo_sombra_v3/
 
 Desenvolvido como jogo textual de terror psicológico em Python puro.
 
-*"Quanto mais fundo no sistema, mais o sistema entra em você."*
+*"Não vire."*
 
 ---
 
