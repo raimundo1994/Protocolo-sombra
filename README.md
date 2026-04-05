@@ -362,9 +362,9 @@ protocolo_sombra_v3/
 
 ## Créditos e Licença
 
-**Protocolo Sombra v3.0 — Complete Edition**
+**Protocolo Sombra**
 
-Desenvolvido como jogo textual de terror psicológico em Python puro.
+Desenvolvido por Raimundo Oscar de Sousa Jr.
 
 *"Não vire."*
 
