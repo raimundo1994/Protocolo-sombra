@@ -1,6 +1,6 @@
 # PROTOCOLO SOMBRA
 
-## "A câmera mostra o que está atrás de você. Não vire. Ela sabe que você está olhando." 
+## "A câmera mostra o que está atrás de você. Não vire. Ela sabe que você está olhando."
 
 ---
 
@@ -32,9 +32,6 @@ A partir daqui, cada escolha importa. Cada sala tem segredos. Cada item carrega 
 ## Instalação e Execução
 
 ```bash
-# Descompactar o arquivo
-unzip protocolo_sombra_v3.zip
-
 # Executar
 python3 jogar.py
 ```
@@ -42,25 +39,26 @@ python3 jogar.py
 Também é possível rodar como módulo Python:
 
 ```bash
-python3 -m protocolo_sombra_v3
+python3 -m protocolo_sombra
 ```
 
 Para rodar os testes automatizados:
 
 ```bash
-python3 -m protocolo_sombra_v3.tests.test_mecanicas
+python3 -m protocolo_sombra.tests.test_mecanicas
 ```
 
 ---
 
 ## Como Jogar
 
-### Comandos Básicos
+### Comandos
 
 | Comando | Descrição |
 |---------|-----------|
 | `norte`, `sul`, `leste`, `oeste` (ou `n`, `s`, `l`, `o`) | Mover-se entre salas |
-| `examinar [alvo]` | Olhar algo de perto (sala, item, objeto) |
+| `voltar` | Retornar à sala anterior |
+| `examinar [alvo]` | Olhar algo de perto (sem alvo: descreve a sala e lista pontos de interesse) |
 | `pegar [item]` | Coletar um item da sala |
 | `usar [item]` | Usar um item do inventário |
 | `ler [item]` | Ler documentos, mensagens ou anotações |
@@ -70,6 +68,7 @@ python3 -m protocolo_sombra_v3.tests.test_mecanicas
 | `inventario` (ou `i`) | Ver itens carregados |
 | `status` (ou `st`) | Ver estado completo do personagem |
 | `mapa` | Exibir mapa dinâmico da instalação |
+| `progresso` | Ver progresso de exploração (salas, segredos, combinações) |
 | `diario` | Consultar todas as descobertas feitas |
 | `notas` | Ver notas pessoais |
 | `anotar [texto]` | Registrar uma observação pessoal |
@@ -78,13 +77,15 @@ python3 -m protocolo_sombra_v3.tests.test_mecanicas
 | `rapido` | Alternar modo rápido (pula animações) |
 | `ajuda` (ou `h`) | Lista completa de comandos |
 
+O jogo também aceita comandos em inglês: `north`, `south`, `east`, `west`, `look`, `take`, `use`, `inventory`, `back`, entre outros.
+
 ### Dicas Para Iniciantes
 
 O jogo reconhece linguagem natural com **fuzzy matching**. Você não precisa acertar o nome exato de um item: se digitar "gravdor", o jogo entende "gravador". Palavras como "o", "a", "de", "na" são ignoradas automaticamente, então "pegar o gravador digital" funciona da mesma forma que "pegar gravador".
 
-Explore cada sala com cuidado. Examine objetos, leia documentos, ouça gravações. A narrativa se revela nos detalhes. Se ficar perdido, o comando `mapa` mostra sua posição e as salas já visitadas.
+Explore cada sala com cuidado. Examine objetos, leia documentos, ouça gravações. A narrativa se revela nos detalhes. Se ficar perdido, o comando `mapa` mostra sua posição e as salas já visitadas, e `examinar` sem alvo lista os pontos de interesse à sua volta.
 
-O `diario` compila automaticamente tudo que você descobriu ao longo do jogo. Use-o para relembrar informações importantes sem precisar anotar nada fora do jogo.
+O `diario` compila automaticamente tudo que você descobriu ao longo do jogo. Use-o para relembrar informações importantes sem precisar anotar nada fora do jogo. O comando `progresso` mostra quantas salas visitou, segredos encontrou e combinações realizou.
 
 ---
 
@@ -121,6 +122,8 @@ Você acorda na instalação depois que tudo deu errado. Os corredores estão va
 ```
 
 Cada sala da instalação é mais do que parece. As descrições mudam conforme sua **exposição à entidade** aumenta. O que começa como um corredor com lâmpadas piscantes pode se transformar em algo que respira, se move e sabe seu nome.
+
+Cada sala também possui **sons ambientais** próprios que surgem aleatoriamente enquanto você explora, adicionando camadas de atmosfera ao ambiente. O gotejamento ritmado do corredor, o zumbido cardíaco dos servidores, o silêncio absoluto da câmara de testes.
 
 ---
 
@@ -172,7 +175,7 @@ Mas a sanidade não é apenas um número. Conforme cai, o próprio jogo muda:
 
 - **Sanidade ≤ 50** — Textos das salas começam a apresentar corrupção visual. Caracteres são substituídos por símbolos estranhos. Você não sabe mais se o que lê é real.
 - **Sanidade ≤ 30** — Itens do inventário podem aparecer como `???`. Você perde a certeza do que carrega. Instabilidade mental é sinalizada pelo sistema.
-- **Sanidade ≤ 15** — O **parser de comandos é afetado**. Há 30% de chance do jogo interpretar seu comando errado: direções invertidas, ações trocadas. Seus pensamentos se embaralham, e o controle escapa.
+- **Sanidade ≤ 15** — O **parser de comandos é afetado**. Há 30% de chance do jogo interpretar seu comando errado: direções invertidas em qualquer sentido, ações trocadas. Seus pensamentos se embaralham, e o controle escapa.
 
 O perfil **Psicólogo** tem 40% de redução em todas as perdas de sanidade.
 
@@ -198,8 +201,8 @@ Conforme você interage com artefatos, lê documentos, usa o capacete de testes 
 
 O jogo opera em um sistema de turnos com eventos que se ativam em marcos específicos:
 
-- **Turno 20** — Selamento parcial. Portas secundárias bloqueadas.
-- **Turno 35** — Contenção automática. Sala Médica isolada.
+- **Turno 20** — Selamento parcial. Portas secundárias bloqueadas (duto de ventilação trancado).
+- **Turno 35** — Contenção automática. Sala Médica isolada (com aviso prévio se estiver dentro).
 - **Turno 50** — Expansão da entidade acelerada. Ondas de interferência.
 - **Turno 65** — Protocolo de auto-destruição em espera. Aviso final.
 - **Turno 85** — Destruição. Se você ainda estiver dentro, acabou.
@@ -209,6 +212,10 @@ O jogo opera em um sistema de turnos com eventos que se ativam em marcos especí
 Certos itens podem ser combinados para revelar segredos e desbloquear novas possibilidades narrativas. Use `combinar [item1] com [item2]`. A ordem não importa.
 
 Existem **9 combinações** no jogo. Algumas são essenciais para acessar finais específicos. Outras revelam verdades devastadoras sobre a instalação, sobre os sujeitos de teste e sobre você.
+
+### Salas Escuras
+
+Algumas salas são escuras. Sem uma fonte de luz (como a lanterna UV), você não consegue examinar detalhes ou interagir com objetos nessas áreas. A exploração é limitada até encontrar iluminação adequada.
 
 ### Diário Automático
 
@@ -220,7 +227,7 @@ Use `anotar [texto]` para registrar observações pessoais. Cada nota é salva c
 
 ### Conquistas
 
-12 conquistas desbloqueáveis durante o jogo:
+13 conquistas desbloqueáveis durante o jogo:
 
 | Conquista | Condição |
 |-----------|----------|
@@ -232,10 +239,15 @@ Use `anotar [texto]` para registrar observações pessoais. Cada nota é salva c
 | ⚡ Inimigo da Máquina | Confiança EVA-9 chegou a zero |
 | 👤 Face a Face | Confrontou a Dra. Brennan |
 | 👁️ Olhos Abertos | Descobriu todos os segredos |
-| ⚡ Velocista | Final alcançado em menos de 30 turnos |
+| ⚡ Velocista | Final alcançado em menos de 40 turnos |
 | 👻 Contato Espectral | Encontrou a sobrevivente fantasma |
 | ⛑️ Interface Neural | Colocou o capacete de testes |
 | 🔧 Mestre Combinador | Realizou todas as combinações |
+| 💀 Memento Mori | Encontrou todos os vestígios dos sujeitos de teste |
+
+### Autosave
+
+O jogo salva automaticamente a cada 10 turnos. Você também pode salvar e carregar manualmente a qualquer momento com os comandos `salvar` e `carregar`.
 
 ---
 
@@ -271,7 +283,7 @@ Cinco voluntários do programa de escaneamento neural. Cada um tem nome, histór
 - **James Wright** (Sujeito 15) — Gravações na cadeira de testes.
 - **Dmitri Volkov** (Sujeito 19) — Um crachá idêntico ao que você carrega. Com outra data.
 
-Eles não são apenas nomes em transcrições. São presenças fantasmas que habitam cada sala e dão vida ao mundo.
+Eles não são apenas nomes em transcrições. São presenças fantasmas que habitam cada sala e dão vida ao mundo. Encontrar todos os cinco vestígios desbloqueia a conquista **Memento Mori**.
 
 ---
 
@@ -328,16 +340,16 @@ O contador de iterações é visível na tela de status: "Iteração #2", "#3", 
 
 ## Estrutura Técnica
 
-O projeto é organizado em 22 arquivos distribuídos em 7 subpacotes:
+O projeto é organizado em 7 subpacotes:
 
 ```
-protocolo_sombra_v3/
-├── __init__.py              # Versão e metadata
+protocolo_sombra/
+├── __init__.py              # Versão e metadata (v3.1.0)
 ├── __main__.py              # Ponto de entrada
 ├── engine/
 │   ├── motor.py             # Loop principal e processador de comandos
 │   ├── parser.py            # Parser com fuzzy matching e distorção por sanidade
-│   └── save_system.py       # Save/Load validado + meta-progressão
+│   └── save_system.py       # Save/Load validado + meta-progressão + autosave
 ├── entities/
 │   ├── jogador.py           # Jogador com perfis, mecânicas e conquistas
 │   ├── eva9.py              # EVA-9 instanciável com estado e memória
@@ -349,7 +361,7 @@ protocolo_sombra_v3/
 │   ├── eventos.py           # Eventos, pressão temporal, confronto com Brennan
 │   └── finais.py            # 7 finais com variantes
 ├── ui/
-│   ├── terminal.py          # Cores ANSI, formatação, mapa dinâmico
+│   ├── terminal.py          # Cores ANSI, formatação, mapa, sons ambientais
 │   └── hud.py               # Status, conquistas, diário, notas
 ├── tests/
 │   └── test_mecanicas.py    # 13 testes automatizados
@@ -358,18 +370,14 @@ protocolo_sombra_v3/
 
 **Nenhuma dependência externa.** Apenas a biblioteca padrão do Python.
 
----
 
-## Créditos e Licença
+## Créditos
 
-**Protocolo Sombra**
+Desenvolvido Raimundo Oscar de Sousa Jr.
+Inspirado por jogos como Zork, Anchorhead, e pela ficção de Jorge Luis Borges, Ted Chiang e Stanisław Lem.
 
-Desenvolvido por Raimundo Oscar de Sousa Jr.
-
-*"Não vire."*
 
 ---
-
+> *"Não vire."*
 > *"A esfera não é uma ameaça. É um espelho. E espelhos não mentem. Eles apenas mostram o que está lá."*
 > — EVA-9
-
