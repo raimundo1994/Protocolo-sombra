@@ -1,0 +1,140 @@
+{
+  "versao": "3.0",
+  "nome": "raimundo",
+  "perfil": "analista",
+  "sanidade": 20,
+  "confianca_eva": 40,
+  "integridade_dados": 70,
+  "exposicao_entidade": 67,
+  "hacking": 60,
+  "inventario": [
+    "gravador",
+    "cartao_obsidian",
+    "celular",
+    "mapa_kheiron",
+    "dosimetro",
+    "diario_brennan",
+    "pendrive_vermelho",
+    "bilhete_elena"
+  ],
+  "flags": {
+    "meta_nota_encontrada": true,
+    "sangue_analisado": true,
+    "leu_mensagens": true,
+    "examinou_corpo": true,
+    "revistou_corpo": true,
+    "encontrou_fantasma": true,
+    "vestigio_corredor_a": true,
+    "vestigio_sala_medica": true,
+    "vestigio_nucleo_servidores": true,
+    "pendrive_conectado": true
+  },
+  "sala_atual": "nucleo_servidores",
+  "turnos": 80,
+  "mensagens_lidas": [],
+  "logs_encontrados": [],
+  "eventos_ocorridos": [
+    "evento_corredor_a",
+    "evento_sala_medica",
+    "evento_nucleo_servidores",
+    "evento_kheiron_profundo"
+  ],
+  "combinacoes_feitas": [],
+  "conquistas": [
+    "primeiro_item",
+    "encontrou_fantasma"
+  ],
+  "notas_pessoais": [],
+  "run_numero": 2,
+  "encontros_elena": 3,
+  "salas_visitadas": {
+    "sala_terminal": true,
+    "corredor_a": true,
+    "duto_ventilacao": false,
+    "sala_observacao": false,
+    "nucleo_servidores": true,
+    "sala_medica": true,
+    "arquivo_morto": false,
+    "sala_secreta": false,
+    "kheiron_profundo": true
+  },
+  "salas_trancadas": {
+    "sala_terminal": false,
+    "corredor_a": false,
+    "duto_ventilacao": false,
+    "sala_observacao": false,
+    "nucleo_servidores": false,
+    "sala_medica": false,
+    "arquivo_morto": false,
+    "sala_secreta": false,
+    "kheiron_profundo": false
+  },
+  "salas_escuras": {
+    "sala_terminal": false,
+    "corredor_a": false,
+    "duto_ventilacao": true,
+    "sala_observacao": false,
+    "nucleo_servidores": false,
+    "sala_medica": false,
+    "arquivo_morto": false,
+    "sala_secreta": false,
+    "kheiron_profundo": false
+  },
+  "salas_itens": {
+    "sala_terminal": [
+      "cracha"
+    ],
+    "corredor_a": [],
+    "duto_ventilacao": [
+      "lanterna"
+    ],
+    "sala_observacao": [
+      "fita_vhs"
+    ],
+    "nucleo_servidores": [],
+    "sala_medica": [],
+    "arquivo_morto": [
+      "foto_grupo"
+    ],
+    "sala_secreta": [
+      "chip_eva"
+    ],
+    "kheiron_profundo": []
+  },
+  "salas_estado": {
+    "sala_terminal": {},
+    "corredor_a": {},
+    "duto_ventilacao": {},
+    "sala_observacao": {},
+    "nucleo_servidores": {},
+    "sala_medica": {},
+    "arquivo_morto": {},
+    "sala_secreta": {},
+    "kheiron_profundo": {}
+  },
+  "eva9": {
+    "humor": "neutra",
+    "interacoes_total": 11,
+    "ultima_sala_falou": "nucleo_servidores",
+    "vezes_ignorada": 0,
+    "segredos_revelados": 0,
+    "temas_discutidos": [
+      "examinou_corpo",
+      "pendrive_conectado"
+    ],
+    "medo_ativo": false,
+    "vulneravel": false
+  },
+  "elena": {
+    "encontros": 3,
+    "confianca": 70,
+    "ultimo_encontro_turno": 70,
+    "estado": "real",
+    "bilhetes_deixados": [
+      "corredor_a",
+      "sala_medica",
+      "nucleo_servidores"
+    ],
+    "ajudas_dadas": 0
+  }
+}
