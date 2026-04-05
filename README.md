@@ -373,7 +373,7 @@ protocolo_sombra/
 
 ## Créditos
 
-Desenvolvido Raimundo Oscar de Sousa Jr.
+Desenvolvido por Raimundo Oscar de Sousa Jr.
 Inspirado por jogos como Zork, Anchorhead, e pela ficção de Jorge Luis Borges, Ted Chiang e Stanisław Lem.
 
 
