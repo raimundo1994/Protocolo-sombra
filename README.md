@@ -384,6 +384,6 @@ Inspirado por jogos como Zork, Anchorhead, e pela ficção de Jorge Luis Borges,
 
 
 ---
-> *"Não vire."*
+> *"Não vire...
 > *"A esfera não é uma ameaça. É um espelho. E espelhos não mentem. Eles apenas mostram o que está lá."*
 > — EVA-9
