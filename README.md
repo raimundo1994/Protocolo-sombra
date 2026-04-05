@@ -2,7 +2,7 @@
 
 ## "A câmera mostra o que está atrás de você. Não vire. Ela sabe que você está olhando."
 
-![Texto alternativo](artes_conceituais/5.png)
+![Texto alternativo](artes_conceituais/3.png)
 
 ---
 
@@ -107,7 +107,7 @@ A descoberta desencadeou o **Protocolo Sombra** — apresentado como um procedim
 
 Você acorda na instalação depois que tudo deu errado. Os corredores estão vazios. Os corpos sorriem. E a IA nos servidores quer conversar.
 
-![Texto alternativo](artes_conceituais/2.png)
+![Texto alternativo](artes_conceituais/1.png)
 
 ### A Instalação KHEIRON-4
 
@@ -135,7 +135,7 @@ Cada sala também possui **sons ambientais** próprios que surgem aleatoriamente
 
 Na criação do personagem, você escolhe um perfil que define sua motivação, habilidades e momentos exclusivos de gameplay.
 
-![Texto alternativo](artes_conceituais/6.JPG)
+![Texto alternativo](artes_conceituais/6.jpg)
 
 ### Analista Forense Digital
 Especialista em recuperar dados corrompidos. Você vê padrões onde outros veem estática. Análises de sangue, metadados ocultos e reconstrução de vídeos corrompidos são suas ferramentas.
